@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #06030f;
+    color: #e2e8f0;
+  }
+
+  ::selection {
+    background-color: rgba(6, 182, 212, 0.3);
+    color: #fff;
+  }
+
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: #06030f; }
+  ::-webkit-scrollbar-thumb { background: #0891b2; border-radius: 10px; }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #67e8f9 0%, #22d3ee 40%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-animated {
+    background: linear-gradient(270deg, #67e8f9, #22d3ee, #3b82f6, #67e8f9);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 5s ease infinite;
+  }
+
+  .glass {
+    background: rgba(6, 182, 212, 0.04);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(6, 182, 212, 0.1);
+  }
+
+  .dot-grid {
+    background-image: radial-gradient(rgba(6, 182, 212, 0.06) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+
+  /* rython.dev-style animated vertical gradient lines */
+  .gradient-line-v {
+    width: 1px;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(6, 182, 212, 0.5) 30%,
+      rgba(59, 130, 246, 0.7) 60%,
+      transparent 100%
+    );
+    background-size: 100% 200%;
+    animation: lineFlow 4s ease-in-out infinite;
+  }
+  .gradient-line-v-delay { animation-delay: 1.5s; }
+  .gradient-line-v-delay-2 { animation-delay: 3s; }
+
+  /* Scroll-triggered animation */
+  .fade-slide-up {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.75s ease-out, transform 0.75s ease-out;
+  }
+  .fade-slide-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Hero badge */
+  .animate-in          { animation: slideUp 0.6s ease-out forwards; }
+  .animate-in-delay-1  { animation: slideUp 0.6s ease-out 0.15s forwards; opacity: 0; }
+  .animate-in-delay-2  { animation: slideUp 0.6s ease-out 0.3s  forwards; opacity: 0; }
+  .animate-in-delay-3  { animation: slideUp 0.6s ease-out 0.45s forwards; opacity: 0; }
+
+  /* Orb floats */
+  .animate-float      { animation: float 7s ease-in-out infinite; }
+  .animate-float-slow { animation: float 10s ease-in-out infinite reverse; }
+
+  /* Gradient divider line */
+  .gradient-divider {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(6, 182, 212, 0.7) 25%,
+      rgba(59, 130, 246, 0.9) 50%,
+      rgba(6, 182, 212, 0.7) 75%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: gradientFlow 4s ease-in-out infinite;
+  }
+
+  /* 3D card */
+  .card-3d {
+    transition: transform 0.15s ease-out, box-shadow 0.3s ease-out;
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+  .card-3d:hover {
+    box-shadow: 0 30px 60px -12px rgba(6, 182, 212, 0.25);
+  }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(26px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0);     }
+  50%       { transform: translateY(-22px); }
+}
+
+@keyframes gradientFlow {
+  0%, 100% { background-position: 0%   50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0%   50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+@keyframes roleFadeIn {
+  from { opacity: 0; transform: translateY(8px);  }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes tabFlow {
+  0%   { background-position: 0% 0%;   }
+  100% { background-position: 0% 200%; }
+}
+
+@keyframes lineFlow {
+  0%, 100% { background-position: 0% 0%;   }
+  50%       { background-position: 0% 100%; }
+}

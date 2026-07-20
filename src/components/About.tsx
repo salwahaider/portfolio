@@ -4,7 +4,7 @@ export default function About() {
   const { ref, inView } = useInView()
 
   return (
-    <section id="about" className="relative py-28 px-6">
+    <section id="about" className="relative py-16 md:py-28 px-6">
       <div className="absolute inset-0 pointer-events-none">
         <div
           className="absolute left-0 top-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full"
@@ -15,7 +15,7 @@ export default function About() {
       <div ref={ref} className="max-w-6xl mx-auto">
         <div className={`fade-slide-up ${inView ? 'visible' : ''}`}>
           <p className="text-cyan-400 text-sm font-semibold tracking-widest uppercase mb-3">About</p>
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-16 leading-tight">
+          <h2 className="text-3xl md:text-5xl font-black text-white mb-10 md:mb-16 leading-tight">
             A bit about <span className="text-gradient">me</span>
           </h2>
         </div>

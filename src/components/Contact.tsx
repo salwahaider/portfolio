@@ -28,7 +28,7 @@ export default function Contact() {
   const { ref, inView } = useInView()
 
   return (
-    <section id="contact" className="relative py-28 px-6">
+    <section id="contact" className="relative py-16 md:py-28 px-6">
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute bottom-0 left-1/4 w-[500px] h-[400px] rounded-full"
           style={{ background: 'radial-gradient(circle, rgba(6,182,212,0.09) 0%, transparent 70%)', filter: 'blur(60px)' }} />
@@ -39,7 +39,7 @@ export default function Contact() {
       <div ref={ref} className="max-w-4xl mx-auto text-center relative z-10">
         <div className={`fade-slide-up ${inView ? 'visible' : ''}`}>
           <p className="text-cyan-400 text-sm font-semibold tracking-widest uppercase mb-3">Contact</p>
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-4 leading-tight">
+          <h2 className="text-3xl md:text-6xl font-black text-white mb-4 leading-tight">
             Let's <span className="text-gradient">talk</span>
           </h2>
           <p className="text-slate-400 text-base md:text-lg max-w-lg mx-auto mb-14 leading-relaxed">

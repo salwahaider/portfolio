@@ -119,7 +119,7 @@ export default function Experience() {
   const entries = content[activeTab]
 
   return (
-    <section id="experience" className="relative py-28 px-6">
+    <section id="experience" className="relative py-16 md:py-28 px-6">
       <div className="absolute inset-0 pointer-events-none">
         <div
           className="absolute right-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full"
@@ -130,7 +130,7 @@ export default function Experience() {
       <div ref={ref} className="max-w-6xl mx-auto">
         <div className={`fade-slide-up ${inView ? 'visible' : ''}`}>
           <p className="text-cyan-400 text-sm font-semibold tracking-widest uppercase mb-3">Background</p>
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-12 leading-tight">
+          <h2 className="text-3xl md:text-5xl font-black text-white mb-8 md:mb-12 leading-tight">
             Where I've <span className="text-gradient">been</span>
           </h2>
         </div>

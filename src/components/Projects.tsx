@@ -234,14 +234,14 @@ export default function Projects() {
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null)
 
   return (
-    <section id="projects" className="relative py-28 px-6">
+    <section id="projects" className="relative py-16 md:py-28 px-6">
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(circle, rgba(6,182,212,0.06) 0%, transparent 70%)', filter: 'blur(60px)' }} />
 
       <div ref={ref} className="max-w-6xl mx-auto">
         <div className={`fade-slide-up ${inView ? 'visible' : ''}`}>
           <p className="text-cyan-400 text-sm font-semibold tracking-widest uppercase mb-3">Projects</p>
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
+          <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
             Things I've <span className="text-gradient">built</span>
           </h2>
           <p className="text-slate-500 mb-16 text-base max-w-md">

@@ -42,20 +42,33 @@ export default function Hero() {
           style={{ background: 'radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%)', filter: 'blur(60px)' }} />
       </div>
 
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-16">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-16">
 
         {/* Left: text */}
-        <div className="flex-1 text-left">
+        <div className="flex-1 text-center md:text-left w-full">
           <p className="animate-in text-slate-500 text-sm font-light mb-4 tracking-widest uppercase">
             Hey, I'm
           </p>
 
-          <h1 className="animate-in-delay-1 text-7xl md:text-8xl font-black tracking-tight mb-5 leading-none">
+          <h1 className="animate-in-delay-1 text-6xl sm:text-7xl md:text-8xl font-black tracking-tight mb-5 leading-none">
             <span className="block text-white">Salwa</span>
             <span className="block text-gradient-animated">Haider.</span>
           </h1>
 
-          <div className="animate-in-delay-2 h-8 flex items-center mb-6 overflow-hidden">
+          {/* Photo — mobile only, sits between name and rest of content */}
+          <div className="animate-in-delay-2 md:hidden flex justify-center my-7">
+            <div className="relative">
+              <div className="absolute -inset-3 rounded-3xl"
+                style={{ background: 'linear-gradient(135deg, rgba(6,182,212,0.3), rgba(59,130,246,0.2))', filter: 'blur(20px)' }} />
+              <img
+                src="/salwahaider.JPG"
+                alt="Salwa Haider"
+                className="relative w-44 h-52 sm:w-64 sm:h-72 rounded-3xl object-cover border border-cyan-500/20"
+              />
+            </div>
+          </div>
+
+          <div className="animate-in-delay-2 h-8 flex items-center justify-center md:justify-start mb-6 overflow-hidden">
             <p
               key={roleIndex}
               className="text-base md:text-lg font-medium text-slate-400 tracking-wide"
@@ -68,7 +81,7 @@ export default function Hero() {
             </p>
           </div>
 
-          <p className="animate-in-delay-2 text-slate-400 text-base md:text-lg max-w-md mb-9 leading-relaxed">
+          <p className="animate-in-delay-2 text-slate-400 text-base md:text-lg max-w-md mb-9 leading-relaxed mx-auto md:mx-0">
             Senior SWE at <span className="text-white font-medium">JPMorgan Chase</span>,
             building Kubernetes tooling at scale. I also ship personal projects with{' '}
             <span className="text-teal-300 font-medium">React</span> and{' '}
@@ -76,7 +89,7 @@ export default function Hero() {
             toward my M.S. in CS at Georgia Tech.
           </p>
 
-          <div className="animate-in-delay-3 flex flex-wrap items-center gap-4 mb-9">
+          <div className="animate-in-delay-3 flex flex-wrap items-center justify-center md:justify-start gap-4 mb-9">
             <a href="#projects"
               className="group px-7 py-3.5 bg-cyan-600 hover:bg-cyan-500 text-white font-semibold rounded-xl transition-all duration-300 shadow-xl shadow-cyan-500/30 hover:shadow-cyan-500/50 hover:-translate-y-0.5">
               See my projects
@@ -88,7 +101,7 @@ export default function Hero() {
             </a>
           </div>
 
-          <div className="animate-in-delay-3 flex items-center gap-4">
+          <div className="animate-in-delay-3 flex items-center justify-center md:justify-start gap-4">
             <a href="https://github.com/salwahaider" target="_blank" rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2.5 glass rounded-xl text-slate-400 hover:text-cyan-300 hover:border-cyan-400/30 transition-all duration-300 text-sm">
               <GitHubIcon /> GitHub
@@ -100,16 +113,15 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right: photo */}
-        <div className="animate-in-delay-2 flex-shrink-0 flex justify-center">
+        {/* Right: photo — desktop only */}
+        <div className="hidden md:flex flex-shrink-0 justify-center">
           <div className="relative">
             <div className="absolute -inset-3 rounded-3xl"
               style={{ background: 'linear-gradient(135deg, rgba(6,182,212,0.3), rgba(59,130,246,0.2))', filter: 'blur(20px)' }} />
-
             <img
               src="/salwahaider.JPG"
               alt="Salwa Haider"
-              className="relative w-72 h-80 md:w-80 md:h-96 rounded-3xl object-cover border border-cyan-500/20"
+              className="relative w-80 h-96 rounded-3xl object-cover border border-cyan-500/20"
             />
           </div>
         </div>
